@@ -32,7 +32,8 @@ public class MessageDaoImpl extends AbstractDao implements MessageDao {
             if (session != null) {
                 session.close();
             }
-        }    }
+        }
+    }
 
     @Override
     public Message get(Long id) {
@@ -40,7 +41,8 @@ public class MessageDaoImpl extends AbstractDao implements MessageDao {
             return session.get(Message.class, id);
         } catch (Exception e) {
             throw new RuntimeException("Can't get message", e);
-        }    }
+        }
+    }
 
     @Override
     public List<Message> getAll() {
@@ -48,9 +50,10 @@ public class MessageDaoImpl extends AbstractDao implements MessageDao {
             return session.createQuery("from Message",
                     Message.class).getResultList();
         } catch (Exception e) {
-            throw new RuntimeException("Can't get " +
-                    "all comments", e);
-        }    }
+            throw new RuntimeException("Can't get "
+                    + "all comments", e);
+        }
+    }
 
     @Override
     public void remove(Message entity) {

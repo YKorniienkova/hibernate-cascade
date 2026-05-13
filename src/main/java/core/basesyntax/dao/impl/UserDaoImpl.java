@@ -50,8 +50,8 @@ public class UserDaoImpl extends AbstractDao implements UserDao {
             return session.createQuery("from User",
                     User.class).getResultList();
         } catch (Exception e) {
-            throw new RuntimeException("Can't get " +
-                    "all user", e);
+            throw new RuntimeException("Can't get "
+                    + "all user", e);
         }
     }
 

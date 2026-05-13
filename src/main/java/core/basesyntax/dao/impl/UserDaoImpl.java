@@ -2,10 +2,10 @@ package core.basesyntax.dao.impl;
 
 import core.basesyntax.dao.UserDao;
 import core.basesyntax.model.User;
+import java.util.List;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
-import java.util.List;
 
 public class UserDaoImpl extends AbstractDao implements UserDao {
     public UserDaoImpl(SessionFactory sessionFactory) {
@@ -50,8 +50,8 @@ public class UserDaoImpl extends AbstractDao implements UserDao {
             return session.createQuery("from User",
                     User.class).getResultList();
         } catch (Exception e) {
-            throw new RuntimeException("Can't get " +
-                    "all user", e);
+            throw new RuntimeException("Can't get "
+                    + "all user", e);
         }
     }
 
